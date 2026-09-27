@@ -68,7 +68,7 @@ public class ModuleManager {
    private final Map<Class<? extends Module>, Module> classMap = new HashMap<>();
    private final Map<String, Module> nameMap = new HashMap<>();
 
-   public ModuleManager() {
+   private ModuleManager() {
       try {
          this.initModules();
          this.modules.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
@@ -78,6 +78,10 @@ public class ModuleManager {
       }
 
       Naven.getInstance().getEventManager().register(this);
+   }
+
+   public static ModuleManager newInstance() {
+      return new ModuleManager();
    }
 
    private void initModules() {

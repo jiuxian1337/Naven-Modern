@@ -62,7 +62,7 @@ public class Naven {
       this.eventWrapper = new EventWrapper();
       this.valueManager = new ValueManager();
       this.hasValueManager = new HasValueManager();
-      this.moduleManager = new ModuleManager();
+      this.moduleManager = ModuleManager.newInstance();
       this.rotationManager = new RotationManager();
       this.commandManager = new CommandManager();
       this.fileManager = new FileManager();
